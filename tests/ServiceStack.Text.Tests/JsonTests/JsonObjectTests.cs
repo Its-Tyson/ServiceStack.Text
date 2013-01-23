@@ -25,6 +25,29 @@ namespace ServiceStack.Text.Tests.JsonTests
             Assert.That(JsonObject.Parse("{ \n\t  \n\r}"), Is.Empty);
         }
 
+        [Test]
+        public void Can_parse_object_with_string_property()
+        {
+            var jsonObject = JsonObject.Parse(@"{""myStringProp"":""SomeStringValue""}");
+            Assert.That(jsonObject.ContainsKey("myStringProp"));
+            Assert.That(jsonObject["myStringProp"], Is.EqualTo("SomeStringValue"));
+        }
+
+        [Test]
+        public void Can_parse_object_with_bool_property()
+        {
+            var jsonObject = JsonObject.Parse(@"{""myBoolProp"":true}");
+            Assert.That(jsonObject.ContainsKey("myBoolProp"));
+            Assert.That(jsonObject["myBoolProp"], Is.EqualTo(true));
+        }
+
+        [Test]
+        public void Can_parse_object_with_int_property()
+        {
+            var jsonObject = JsonObject.Parse(@"{""myIntProp"":123}");
+            Assert.That(jsonObject.ContainsKey("myIntProp"));
+            Assert.That(jsonObject["myIntProp"], Is.EqualTo(123));
+        }
 
         public class Jackalope
         {
