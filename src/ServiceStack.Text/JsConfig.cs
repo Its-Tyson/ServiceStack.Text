@@ -584,6 +584,10 @@ namespace ServiceStack.Text
 		}
 
         [MonoTouch.Foundation.Preserve]
+        // Comment out unneeded struct types
+        // https://bugzilla.xamarin.com/show_bug.cgi?id=9628#c4
+        // https://bugzilla.xamarin.com/show_bug.cgi?id=9002
+        // https://bugzilla.xamarin.com/show_bug.cgi?id=1102
         public static void RegisterForAot()
         {
 			RegisterTypeForAot<Poco>();
@@ -591,30 +595,30 @@ namespace ServiceStack.Text
             RegisterElement<Poco, string>();
 
             RegisterElement<Poco, bool>();
-            RegisterElement<Poco, char>();
-            RegisterElement<Poco, byte>();
-            RegisterElement<Poco, sbyte>();
-            RegisterElement<Poco, short>();
-            RegisterElement<Poco, ushort>();
+            //RegisterElement<Poco, char>();
+            //RegisterElement<Poco, byte>();
+            //RegisterElement<Poco, sbyte>();
+            //RegisterElement<Poco, short>();
+            //RegisterElement<Poco, ushort>();
             RegisterElement<Poco, int>();
-            RegisterElement<Poco, uint>();
+            //RegisterElement<Poco, uint>();
 
 			RegisterElement<Poco, long>();
-            RegisterElement<Poco, ulong>();
+            //RegisterElement<Poco, ulong>();
             RegisterElement<Poco, float>();
             RegisterElement<Poco, double>();
             RegisterElement<Poco, decimal>();
 
             RegisterElement<Poco, bool?>();
-            RegisterElement<Poco, char?>();
-            RegisterElement<Poco, byte?>();
-            RegisterElement<Poco, sbyte?>();
-            RegisterElement<Poco, short?>();
-            RegisterElement<Poco, ushort?>();
+            //RegisterElement<Poco, char?>();
+            //RegisterElement<Poco, byte?>();
+            //RegisterElement<Poco, sbyte?>();
+            //RegisterElement<Poco, short?>();
+            //RegisterElement<Poco, ushort?>();
             RegisterElement<Poco, int?>();
-            RegisterElement<Poco, uint?>();
+            //RegisterElement<Poco, uint?>();
             RegisterElement<Poco, long?>();
-            RegisterElement<Poco, ulong?>();
+            //RegisterElement<Poco, ulong?>();
             RegisterElement<Poco, float?>();
             RegisterElement<Poco, double?>();
             RegisterElement<Poco, decimal?>();
